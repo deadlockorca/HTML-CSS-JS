@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha512-zVjBbEjCeSbeIW2napMaT8VYXI/akKe9Yq2x2sRFiIX+onOjlFkqHVks/7IPSPLnmlHyoH8tFcL3PHdPCXC9ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>AngularJS</title>
+</head>
+<body>
+    <!-- ng-app: Khai bao angularjs application-->
+    <!--ng-init: khoi tao gia tri bna dau-->
+    <div ng-app="" ng-init="name ='fpt-aptech'">
+        <!-- {{...}}  Bieu thuc. Su dung de Binding(load data)
+        from Modle-->
+        <p>{{name}}</p>
+        <p ng-bind="name"></p>
+
+    </div>
+</body>
+</html>

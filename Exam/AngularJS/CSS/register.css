@@ -1,0 +1,36 @@
+* {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+body {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+#head1 {
+    margin-top: 30px;
+    font-size: 40px;
+}
+.in {
+    padding: 10px;
+    margin: 5px 0px 5px 0px;
+}
+#btn1 {
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    margin: 5px 10px;
+    border-radius: 3px;
+}
+#btn2{
+    padding: 5px 10px;
+    border: 1px solid aquamarine;
+    background-color: aquamarine;
+    margin: 5px 10px;
+    border-radius: 3px;
+}
+input {
+    border: 1px solid gray;
+    border-radius: 3px;
+    height: 20px;
+}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+<body>
+    <h1>HTML Form</h1>
+    <p>When you cick submit button</p>
+    <form action="http://w3schools.com/action_page.php"
+    method="get"
+    target="_blank"
+    oninput="x.value = parseInt(numberA.value) - parseInt(numberB.value)"
+    >
+     <fieldset>
+        <legend>Off with no reason</legend>
+        <fieldset>
+            <legend>Student info</legend>
+            <label for="fname">First Name</label>
+            <br />
+            <input type="text" name="fNameInput" id="fname" required>
+            <br/>
+            <label for="IName">Last Name</label>
+            <input type="text" name="INameInput" id="fname"  required>
+            <br/>
+            <label for="Email">Email</label>
+            <input type="email" name="emailinput" id="femail" >
+            <label for="passWord">Password</label>
+            <input type="password" name="Ipassword" id="fpassword" required>
+            <label for="ageNumber" name="ageNumber" id="fage">Age</label>
+            <input type="number" minlength="18" maxlength="30">
+        </fieldset>
+        <fieldset>
+            <legend>Explain</legend>
+            <label for="reason">Reason:</label>
+            <select name="reaInput" id="reason" multiple>
+                <option value="tired">Too Tired</option>
+                <option value="busy">Busy</option>
+                <option value="late">Late</option>
+            </select>
+        </fieldset>
+        <fieldset>
+         <legend>Remaining points</legend>
+         <input type="range" name="numberA" value="50">
+         <br/>
+         <input type="range" name="numberB" value="0" >
+         <br/>
+         <label>Remaining points</label>
+        </br>
+        <output name="x" for=" numberA numberB">50</output>
+        </fieldset>
+        <input type="submit" value="submit form">
+     </fieldset></form>
+    </div>
+</body>
+</html>

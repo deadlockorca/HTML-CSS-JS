@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="app1.js"></script>
+    <title>Exam</title>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-controller="UserController">
+          <h2>Create User</h2>
+          <form>
+            <label>Name:</label>
+            <input type="text" ng-model="userName"><br>
+            <label>Email:</label>
+            <input type="email" ng-model="userEmail"><br>
+            <label>Password:</label>
+            <input type="password" ng-model="userPassword"><br>
+            <label>Phone:</label>
+            <input type="text" ng-model="userPhone"><br>
+            <button type="button" ng-click="addUser()">Submit</button>
+          </form>
+      
+          <h2>User List</h2>
+          <ul>
+            <li ng-repeat="user in users">{{ user.name }} - {{ user.email }} - {{ user.phone }}</li>
+          </ul>
+        </div>
+      
+        <div ng-controller="ProductController">
+          <h2>Create Product</h2>
+          <form>
+            <label>Name:</label>
+            <input type="text" ng-model="productName"><br>
+            <label>Description:</label>
+            <input type="text" ng-model="productDescription"><br>
+            <label>Price:</label>
+            <input type="number" ng-model="productPrice"><br>
+            <button type="button" ng-click="addProduct()">Submit</button>
+          </form>
+      
+          <h2>Product List</h2>
+          <ul>
+            <li ng-repeat="product in products">{{ product.name }} - {{ product.description }} - {{ product.price }}</li>
+          </ul>
+        </div>
+      </div>
+      
+</body>
+</html>

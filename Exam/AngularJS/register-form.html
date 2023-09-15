@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.3/angular.min.js" integrity="sha512-KZmyTq3PLx9EZl0RHShHQuXtrvdJ+m35tuOiwlcZfs/rE7NZv29ygNA8SFCkMXTnYZQK2OX0Gm2qKGfvWEtRXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="registration.js"></script>
+    <link rel="stylesheet" href="registration.css">
+</head>
+<body>
+    <h2 id="head1">Registration</h2>
+    <div ng-app="registrationFormApp" ng-controller="registrationFormCtrl">
+        <form>
+          <div class="in">
+            <label>Username:</label>
+            <input type="text" ng-model="registrationData.username" required>
+          </div>
+          <div class="in">
+            <label>Password:</label>
+            <input type="password" ng-model="registrationData.password" required>
+          </div>
+          <div class="in">
+            <label>Repeat Password:</label>
+            <input type="password" ng-model="registrationData.repeatPassword" required>
+          </div>
+          <div class="in">
+            <label>Email:</label>
+            <input type="email" ng-model="registrationData.email" required>
+          </div>
+          <button id="btn1" ng-click="submitRegistrationForm()">Submit</button>
+          <button id="btn2" ng-click="cancelRegistrationForm()">Cancel</button>
+        </form>
+      </div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.pseudo-hidden{
+    display: none;
+    background-color: red;
+    color: green;
+}
+.pseudo-toggle{
+    background-color: greenyellow;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    cursor: pointer;
+}
+.pseudo-toggle:hover{
+    background-color: green;
+}
+.pseudo-toggle:hover .pseudo-hidden{
+    display: block;
+}

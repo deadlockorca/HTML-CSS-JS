@@ -1,0 +1,28 @@
+.div1{
+    background-color: pink;
+}
+.div2{
+    background-color: blue;
+}
+.div3{
+    background-color: green;
+}
+.div-float{
+    padding: 20px;
+    float: left;
+    clear: both;
+}
+.float-left{
+    float: left;
+}
+.clear{
+    clear: both;
+}
+*{
+    box-sizing: border-box;
+}
+.box-4{
+    float: left;
+    padding: 50px;
+    width: 25%;
+}

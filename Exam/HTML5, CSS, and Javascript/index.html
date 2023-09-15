@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+	<form action="#" id="form" method="post">
+
+		<div class="container">
+			<h1 style="text-align: center;">Create Account</h1>
+			<p style="text-align: center;">Get started with your free account</p>
+			<button style="background-color: #00acee;" type="button">Login via Twitter</button>
+			<button style="background-color: #3b5998;" type="button">Login via Facebook</button>
+            <p style="text-align: center;">Or</p>
+		
+                  <!--fullname Input-->
+			<div>
+                <label for="fullname"></label>
+                <i class="fas fa-user"></i>
+                <input type="text" name="username" id="username" placeholder="Full name">
+				<i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>
+                  <!--Email input-->
+			<div>
+                <label for="email"></label>
+                <i class="far fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email address">
+				<i class="fas fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>
+			<label for="jobtype"><b></b></label>
+			<select name="jobtype">
+				<option value="Designer">Designer</option>
+				<option value="Manager">Manager</option>
+				<option value="Accaunting">Accaunting</option>
+			</select>
+               <!--Password input-->
+			<div>
+                <label for="password"></label>
+                <i class="fas fa-lock"></i>
+                <input type="password" name="password" id="password" placeholder="Password">
+                <i class="fas fa fa-exclamation-circle failure-icon"></i>
+                <i class="far fa-check-circle success-icon"></i>
+                <div class="error"></div>
+            </div>
+			<label for="password-repeat"><b></b></label>
+            <i class="fas fa-lock"></i>
+			<input type="password" placeholder="Repeat Password" name="password-repeat">
+
+			<button type="submit" style="background-color: #00acee;">Create Account</button>
+            <div>
+             <p style="text-align: center;">Already have an account? <a href="">Log In</a></p>
+            </div>
+		</div>	
+	
+	</form>
+
+</body>
+<script src="main.js"></script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js" integrity="sha512-zVjBbEjCeSbeIW2napMaT8VYXI/akKe9Yq2x2sRFiIX+onOjlFkqHVks/7IPSPLnmlHyoH8tFcL3PHdPCXC9ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <title>MVC and events</title>
+</head>
+<body>
+    <!--Model; Controler;View-->
+    <!--Model: Xu li nghiep vu(functions)
+    Controler: Nhan va dieu huong cac request toi:
+       Modle va View
+       View: Load(binding) du lieu tu Modle
+       (giao tiep giua Controler va View su dung $scope)-->
+    <script src="agl2-module.js"></script>
+    <script src="agl2-controler.js"></script>   
+    <h2>MVC design patter demo</h2>
+    <!--Khai bao Angularjs va Controller-->
+    <div ng-app="myApp" ng-controller="myController"></div>
+    Vowels:
+    <!--Add events-->
+    <button ng-click="ch('A')">A</button>
+    <button ng-click="ch('E')">E</button>
+    <button ng-click="ch('I')">I</button>
+    <button ng-click="ch('O')">O</button>
+    <button ng-click="ch('U')">U</button>
+    <!--Binding data-->
+    <p>{{ choice }}</p>
+    List:
+    <select ng-options="option for option in the list"
+       ng-model="mychoice"
+       ng-change="c()" ></select>
+    <p> {{ choice }}</p>   
+</body>
+</html>

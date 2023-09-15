@@ -1,0 +1,75 @@
+p{
+    border: 1px solid #000;
+    width: 200px;
+    padding: 15px;
+    text-align: justify;
+}
+.font-decoration{
+    text-decoration: underline;
+}
+.font-style{
+    font-style: italic;
+}
+.font-transform{
+    text-transform: uppercase;
+    word-spacing: 30px;
+    letter-spacing: 10px;
+}
+.font-weight{
+    font-weight: bold;
+}
+.font-size{
+    font-size: 40px;
+}
+h1, h2, h3 {
+    color: green;
+    text-align: center;
+}
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+} 
+@font-face {
+    font-family:Dancing-Regular ;
+    src: url(../Font/Dancing_Script/static/DancingScript-Regular.ttf);
+}  
+@font-face {
+    font-family: Dancing-Medium;
+    src: url(../Font/Dancing_Script/static/DancingScript-Medium.ttf);
+}
+@font-face {
+    font-family:Dancing-Bold ;
+    src: url(../Font/Dancing_Script/static/DancingScript-Bold.ttf);
+}
+@font-face {
+    font-family:Daning-Semibold ;
+    src: url(../Font/Dancing_Script/static/DancingScript-SemiBold.ttf);
+}
+.google-font-regular{
+    font-family: Dancing-Regular;
+    font-weight: normal;
+}
+.google-font-medium{
+    font-family: Dancing-Medium;
+    font-weight: normal;
+}
+.google-font-bold{
+    font-family: Dancing-Bold;
+    font-weight: normal;
+}
+.google-font-semibold{
+    font-family: Dancing-Semibold;
+    font-weight: normal;
+}
+ul{
+    list-style-type: disclosure-closed;
+}
+li{
+    border: 1px dashed blue;
+}
+ol{
+    list-style-type: lower-greek;
+    list-style-position: inside;
+}

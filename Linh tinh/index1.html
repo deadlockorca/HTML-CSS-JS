@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+</head>
+<body>
+    <a href="http://vnexpress.net">News in VN</a>
+    <script>
+        //Goi ham
+        $(document).ready(function(){
+            //connect to function
+        });
+        //Tuong tac voi Events
+        $(document).ready(function(){
+            $("a").click(function(event){
+                alert("Hello World");
+            })
+        });
+        //Ket hop css
+        $(document).ready(function(){
+            $("h1").css("color", "blue");
+            $(".red").css("color", "red");
+            //$("selector").css("property",value);
+            $("p").css("background-color","green");
+            $("#data").css("background-color","yellow");
+        });
+        //Ket hop vs event
+        $(document).ready(function(){
+        //event code here
+        $("div").mouseover.(function(){
+            alert('Mouse over!!!');
+        });
+        });   
+
+        
+    </script>
+    <h1 id="hello">Hello</h1>
+    <div class="red">This is div tag</div>
+    <p> This is p tag</p>
+    <div id="data">Contents on the div tag</div>
+</body>
+</html>
