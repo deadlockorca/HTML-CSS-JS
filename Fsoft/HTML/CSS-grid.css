@@ -1,0 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+.grid-container{
+    display: grid;
+    background-color: navy;
+    padding: 10px;
+    height: 500px;
+}
+.grid-container{
+    display: grid;
+    grid-template-columns: repeat(3 , 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+}
+.grid-item{
+    background-color: aquamarine;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #000;
+}
+.grid-container-2{
+    display: grid;
+    height: 400px;
+    gap: 15px;
+    background-color: aquamarine;
+    padding: 10px;
+    grid-template-areas:
+    "area area ." 
+    "area area ." 
+    "area area ."
+    "area area ."
+    "area area ." ;
+}
+.grid-container-2 div {
+    padding: 20px 0;
+    text-align: center;
+    background-color: brown;
+    color: #fff;
+    font-size: 35px;
+}
+.item1 {
+    grid-area: area;
+}
+.grid-container-3{
+    display: grid;
+    grid-gap: 10px;
+    background-color: #2196f3;
+    grid-template-areas: 
+    "header header header header header header"
+    "menu main main main right right"
+    "menu footer footer footer footer footer";
+}
+.grid-container-3 div {
+    background-color: rgba(255,255,255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+   
+}
+.item-multi-header {
+    grid-area: header;
+}
+.item-multi-menu{
+    grid-area: menu;
+}
+.item-multi-main {
+    grid-area: main;
+}
+.item-multi-right{
+    grid-area: right;
+}
+.item-multi-footer {
+    grid-area: footer;
+}
