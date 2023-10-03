@@ -47,3 +47,17 @@ function setWeather(){
         weatherText.textContent = "";
     }
 }    
+//EX4
+var selectTheme = document.querySelector("#theme");
+selectTheme.addEventListener("change", setTheme);
+const html = document.querySelector("html");
+
+
+function setTheme(){
+    let bgColor = selectTheme.value === "pik" ? "pink" : "black";
+    console.log("bgColor: ", bgColor);
+    let textColor = selectTheme.value !== "pik" ? "pink" : "black"; 
+    html.style.backgroundColor = bgColor;
+    html.style.color = textColor;
+}
+setTheme();
