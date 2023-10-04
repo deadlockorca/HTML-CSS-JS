@@ -1,4 +1,3 @@
-/* Colors */
 :root {
     --primary: #59D466;
     --secondary: #81D189;
@@ -8,7 +7,6 @@
     --dark: #7078C2;
   }
   
-  /* Styles */
   body {
     font-family: Arial, sans-serif;
     margin: 0;

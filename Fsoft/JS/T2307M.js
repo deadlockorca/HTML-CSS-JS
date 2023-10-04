@@ -1,4 +1,3 @@
-// Product data
 const products = [
     {
       name: 'Product 1',
@@ -62,7 +61,6 @@ const products = [
     }
   ];
   
-  // Display products on page load
   function displayProducts() {
   
     const tableBody = document.querySelector('#products tbody');
@@ -93,30 +91,22 @@ const products = [
   
   displayProducts();
   
-  // Confirm add new product
   const addButton = document.querySelector('#add-new');
   
   addButton.addEventListener('click', () => {
     const confirmAdd = confirm('Are you sure you want to add a new product?');
-    if(confirmAdd) {
-      // Add new product logic here
-    }
+    if(confirmAdd) {}
   });
   
-  
-  // Sort amount column
   const sortButton = document.querySelector('#sort');
   
   sortButton.addEventListener('click', () => {
   
-    // Sort data
     products.sort((a, b) => b.amount - a.amount);
-  
-    // Remove existing rows
+
     const tableBody = document.querySelector('#products tbody');
     tableBody.innerHTML = '';
   
-    // Re-add sorted data
     displayProducts();
   
   });

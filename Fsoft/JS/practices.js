@@ -1,36 +1,43 @@
-var select = document.querySelector("select");
-var list = document.querySelector(".output ul");
-var output = document.querySelector(".output p");
-var input = document.querySelector(".output input");
-var button = document.querySelector(".output button");
+// Product data
+const products = [];
 
+// Add new product
+function addNewProduct() {
+  const nameInput = document.querySelector('#name');
+  const descriptionInput = document.querySelector('#description');
+  const amountInput = document.querySelector('#amount');
+  const dateInput = document.querySelector('#date');
 
-var person = {
-    id: 1,
-    name: "Le Van C",
-    age: 20,
-    email: "email@gmail.com",
-};
+  const name = nameInput.value;
+  const description = descriptionInput.value;
+  const amount = parseInt(amountInput.value);
+  const date = dateInput.value;
 
-var key = "id";
+  const newProduct = {
+    name: name,
+    description: description,
+    amount: amount,
+    date: date
+  };
 
-select.addEventListener("change", function(event){
-    console.log("select event: ", event.target.value);
-    key = event.target.value;
+  products.push(newProduct);
+
+  // Reset input fields
+  nameInput.value = '';
+  descriptionInput.value = '';
+  amountInput.value = '';
+  dateInput.value = '';
+
+  // Redirect to User Information page
+  window.location.href = 'user_information.html';
+}
+
+// Confirm add new product
+const addButton = document.querySelector('#add-new');
+
+addButton.addEventListener('click', () => {
+  const confirmAdd = confirm('Are you sure you want to add a new product?');
+  if (confirmAdd) {
+    addNewProduct();
+  }
 });
-
-button.addEventListener("click", function(){
-    var newValue  = input.value;
-    
-    console.log(key, person, newValue);
-    output.textContent = JSON.stringify(person);
-});
-
-button.addEventListener("click", function(){
-    var newValue = input.value;
-    
-    person[key] = newValue;
-    
-    output.textContent = JSON.stringify(person);
-});
-
