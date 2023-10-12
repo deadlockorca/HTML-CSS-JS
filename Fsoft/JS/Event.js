@@ -35,4 +35,23 @@ for( let index = 0; index < divArray.length; index++){
 }
 
 
+const form = document.querySelector("form")
+const fname = document.getElementById("fname")
+const lname = document.getElementById("lname")
+const notify = document.querySelector("#warning")
+
+form.onsubmit = function(event){
+    if(fname.value === "" || lname.value === ""){
+        event.preventDefault();
+        alert("Submit error!");
+        notify.textContent = "Submit error"
+        notify.style.color = "red";
+    }else{
+    alert("Submit success");
+    notify.textContent = "Submit success";
+};
+}
+window.addEventListener("contextmenu", function(event){
+    event.preventDefault();
+});
 

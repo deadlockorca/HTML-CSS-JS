@@ -6,16 +6,43 @@
     <title>JS EVENT</title>
     <script src="Event.js" defer></script>
     <style>
-        div{
+        /*div{
             background-color: red;
             height: 100px;
             width: 25%;
             float: left;
+        }*/
+        div {
+            margin-bottom: 10px;
+        }
+        .color-warning {
+            color: red;
         }
     </style>
 </head>
 <body>
     <h1>JS EVENT</h1>
+    <button id="display-video">Display video</button>
+    <div id="main-video" class="hidden">
+        <video>
+            <source src="ra">
+        </video>
+    </div>
+    <form>
+        <div>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname">
+        </div>
+        <div>
+            <label for="lname">Last name</label>
+            <input type="text" id="lname">
+        </div>
+        <div>
+            <input type="submit" id="submit">
+        </div>
+        <p class="color-warning" id="warning"></p>
+        
+    </form>
     <button id="change-color" onclick="bgChange()" ondblclick="bgChange()" onfocus="colorChange()" onblur="colorChange()" onmouseover="colorChange()" onmouseout="colorChange()" >Change Color</button>
 </body>
 </html>
