@@ -55,3 +55,19 @@ window.addEventListener("contextmenu", function(event){
     event.preventDefault();
 });
 
+const btnVideo = document.getElementById("display-video")
+const videoBox = document.getElementById("main-video")
+const video = document.querySelector("video")
+
+btnVideo.onclick = function(){
+    videoBox.setAttribute("class", "showing");
+};
+
+video.onclick = function(){
+    video.play();
+};
+
+videoBox.onclick = function(){
+    videoBox.setAttribute("class", "hidden");
+}
+

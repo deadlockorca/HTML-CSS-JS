@@ -18,6 +18,31 @@
         .color-warning {
             color: red;
         }
+        div#main-video{
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 480px;
+            height: 380px;
+            border-radius: 10px;
+            border-color: #eee;
+            background-image: linear-gradient(
+                to bottom,
+                rgba(0,0,0),
+                rgba(0,0,0,0)
+            );
+        }
+        .hidden{
+            left: -50%;
+        }
+        .showing{
+            left: 50%;
+        }
+        div#main-video video {
+            display: block;
+            width: 400px;
+            margin: 40px auto;
+        }
     </style>
 </head>
 <body>
@@ -25,7 +50,9 @@
     <button id="display-video">Display video</button>
     <div id="main-video" class="hidden">
         <video>
-            <source src="ra">
+            <source src="video/video.mp4">
+            <source src="video/video.webm">
+            <p>Your browser does not sp HTML5 videos tags</p>
         </video>
     </div>
     <form>

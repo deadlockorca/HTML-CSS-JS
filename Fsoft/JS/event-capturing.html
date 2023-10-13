@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capturing</title>
+    <style>
+        #article{
+            border: 1px solid salmon;
+            padding: 20px;
+        }
+        #parent{
+
+
+        }
+    </style>
+</head>
+<body>
+    <article id="article">
+        article element
+        <div id="parent">
+            div element
+            <p id="child">
+                child element
+            </p>
+        </div>
+    </article>
+    <script>
+        for(let elem of document.querySelectorAll("*")){
+            elem.addEventListener("click", function(event){
+                console.log("Capturing: ", elem.tagName);
+
+            }.
+            true
+            )
+        }
+    </script>
+</body>
+</html>
