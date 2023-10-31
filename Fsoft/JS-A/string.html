@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String JS</title>
+</head>
+<body>
+    <h1>JS STRING ADVANCE</h1>
+    <p id="string"></p>
+    <script>
+        var string = "Hello Fsoft Academy! - Fsoft";
+        //slice(start,end)
+        var stringSlice = string.slice(0, 5);
+        //substring(start,end)
+        var strSubstring = string.substring(7, 1);
+        //substr(start,length)
+        var strSubstr = string.substr(-19, 8);
+        //replace
+        var strReplace = string.replace(/Fsoft/gi, "Doanh");
+        
+        document.getElementById("string").innerHTML = strReplace;
+        
+    </script>
+</body>
+</html>

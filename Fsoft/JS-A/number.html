@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number</title>
+</head>
+<body>
+    <h1>Number JS</h1>
+    <p id="demo"></p>
+    <script>
+        function checkNumber(arg){
+            if(!Number.isNaN(arg)){
+                return typeof arg === "number"
+            }
+            return false;
+
+        }
+        checkNumber();
+        
+        
+        
+
+        
+        let result =
+        " Is 123 NaN ?" +
+        isNaN(123) +
+        "<br>" +
+        "Is '123' NaN?" +
+        isNaN("123") +
+        " - " +
+        typeof "123" +
+        "<br>" +
+        "Is '28/10/2023' Nan?" +
+        isNaN("28/10/2023") + 
+        " - " +
+        typeof "28/10/2023";
+        
+        document.getElementById("demo").innerHTML = result;
+
+    
+
+    </script>
+</body>
+</html>
