@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scope Js</title>
+</head>
+<body>
+    <h1>JS Scope</h1>
+    <script>
+        //EX
+        function outerCloser(outerVar){
+            return function innerCloser(innerVar){
+                console.log(outerVar);
+                console.log(innerVar);
+            };
+        }
+        const newFunction = outerFunction("outside");
+        newFunction("inside");
+        function scope(){
+            if(true){
+                var a = 5;
+                const b = 10;
+                let c = 20;
+            }
+            console.log(a);
+            console.log(b);
+            console.log(c);
+        }
+        scope();
+        var globalVar = "Hello, I'm from global";
+        function outerFunction() {
+let outerVar = "Hello, i'm from outside!";
+function innerFunction() {
+let innerVar = "Hello, i'm from inside!";
+console.log(globalVar); 
+console. log (outerVar); 
+console.log(innerVar);
+}
+return innerFunction;
+}
+const inner = outerFunction();
+inner();
+        if(true){
+            const message = "Hello World";
+            console.log(message);
+        }
+        console.log(message);
+    </script>
+</body>
+</html>
