@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOF JS</title>
+</head>
+<body>
+    <h1>HOF JS</h1>
+    <script>
+        function higherOrderFunction(callback){
+            console.log(typeof callback);
+            callback();
+            return function(name){
+                console.log(`Returned function called: ${name}`);
+            };
+        }
+        function callbackFunction(){
+            console.log("This is a callback function");
+        }
+        const returnedFunction = higherOrderFunction(callbackFunction);
+        console.log(typeof returnedFunction);
+        returnedFunction("FA");
+    </script>
+</body>
+</html>
