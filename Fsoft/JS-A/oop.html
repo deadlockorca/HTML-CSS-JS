@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OOP</h1>
+    <script>
+        //inheritance
+
+
+        //parent class
+        class Animal{
+            constructor(name){
+                this.name = name;
+            }
+
+            speak(){
+                console.log(`${this.name} makes a sound`);
+            }
+        }
+
+        //child class1
+        class Cat extends Animal{
+            //overide speak method
+            speak(){
+                console.log(`${this.name} meow meow!`);
+            }
+        }
+        //child class2
+        class Dog extends Animal{
+            //overide speak method
+            speak(){
+                console.log(`${this.name} bark bark`);
+            }
+        }
+        //child class3
+        class Tiger extends Cat{
+            constructor(name, color){
+                super(name);
+                this.color = color;
+            }
+            speak(){
+                console.log(`${this.name} roar roar`);
+            }
+            
+        }
+        const tiger1 = new Tiger("Hieu");
+        tiger1.speak();
+
+        const cat1 = new Cat("Mi");
+        cat1.speak();
+
+        const Dog1 = new Dog("Lu");
+        Dog1.speak(); 
+
+        //
+        class Circle {
+            constructor(radius){
+                this.radius = radius;
+            }
+            getRadius(){
+                return this.radius;
+            }
+            setRadius(radius){
+                this.radius = radius;
+
+            }
+            calculateArea(){
+                return Math.PI * this.radius ** 2;
+            }
+        }
+
+        const circle = new Circle(10);
+        console.log(circle.getRadius());
+        circle.setRadius(20);
+        console.log(circle.getRadius());
+        console.log(circle.calculateArea());
+        //cirlce 2
+        const circle2 = new Circle(10);
+        console.log(circle2.getRadius());
+        console.log(circle2.calculateArea());
+    </script>
+</body>
+</html>
