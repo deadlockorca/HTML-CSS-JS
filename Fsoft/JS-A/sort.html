@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOF</h1>
+    <script>
+        var fruits = ["Banana","Lemon","Apple","Orange","Mango"];
+        fruits.sort(function(a,b){
+            return b.localeCompare(a);
+        });
+        //fruits.sort();
+        //fruits.reverse();
+        console.log("fruits: ". fruits);
+    </script>
+</body>
+</html>
