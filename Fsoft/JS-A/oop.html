@@ -8,7 +8,64 @@
 <body>
     <h1>OOP</h1>
     <script>
-        //inheritance
+        //this in  obj method
+        let personThis = {
+            name: "FPT Corporation",
+            greet(){
+                console.log("personThis: ", this.name);
+            }
+        }
+        personThis.greet();
+        //normal function
+        function greetThis(){
+            this.alert();
+            console.log(this);
+        }
+        greetThis();
+        //Prototype
+        class Person{
+            constructor(first, last) {
+                this.first = first;
+                this.last = last;
+            }
+        }
+        console.log(Person)
+        Person.prototype.getFullName = function(){
+            return `${this.first} ${this.last}`;
+        };
+        let person = new Person("FPT", "Coporation");
+        console.log(person)
+        console.log(person.getFullName());
+        //Static
+        class MyClass{
+            static greeting = "Hello World";
+            static count = 0;
+            constructor(){
+                MyClass.count += 1;
+            }
+
+            static greet(){
+                return this.greeting;
+            }
+        }
+        let objMyClass = new MyClass();
+        console.log(objMyClass.count);
+        console.log(MyClass.count);
+        console.log(MyClass.greet());
+        //Private
+        class Academy{
+            #privateProperty;
+            publicProperty;
+            constructor(privateValue, publicValue){
+                this.#privateProperty = privateValue;
+                this.publicProperty = publicValue;
+            }
+            getPrivateProperty(){
+                return this.#privateProperty
+            }
+        }
+        let objAcademy = new Academy("Fsoft", "FPT Corp")
+        console.log(objAcademy.publicProperty);
 
 
         //parent class
