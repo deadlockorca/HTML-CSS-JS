@@ -8,6 +8,69 @@
 <body>
     <h1>OOP</h1>
     <script>
+        createToken = () => {
+            var s = Symbol();
+            return {
+                [s]: "Secret",
+            };
+        };
+        var token = createToken();
+        console.log(token);
+        //Symbol() (ECMAScript 2015)
+        const symbol1 = Symbol("mySymbol")
+        const Symbol2 = Symbol("mySymbol");
+        //
+        const personObj = {
+            name: "Thuyet",
+            age: 23,
+            address: "Ha Noi",
+            hairColor: "black",
+        };
+        const getSomething = ({name, age,...otherInfo}) => {
+            console.log(name, age, otherInfo);
+        };
+        getSomething(personObj);
+    
+        //Destrucring
+        const post = {
+            postId: 1,
+            website: "http://google.com",
+            date: "09/11/2023",
+            comments: {commentId: 10, commentTitle: "Lorem Ipsum"},
+        };
+        const {postId, website, date} = post
+        console.log(postId, website, date);
+        //
+        const sum = (...numbers) =>{
+            console.log(numbers);
+            return numbers.reduce((total, num) => total + num, 0);
+        };
+        console.log(sum(1,2,3));
+
+        //Spread obj
+        const originalObject = {
+            enabled: true,
+            darkMode: false
+        };
+        const secondObject = {...originalObject} 
+        secondObject.darkMode = true;
+        console.log(originalObject)
+        console.log(secondObject)
+
+        //ex
+        const tools = ["hammer", "screwdriver"];
+        const otherTools = ["wrench", "saw"];
+        const otherTools2 = ["screw", "spoon"];
+        //ES6
+        const allTool = tools.concat(otherTools, otherTools2);
+        console.log(allTool);
+        //EX
+        const numberMulti = [5,6,7];
+        const multifly = (a,b,c) => {
+            return a * b * c;
+        };
+        //console.log(multifly(5,6,7));
+        console.log(multifly(...numberMulti));
         //this in  obj method
         let personThis = {
             name: "FPT Corporation",
@@ -18,8 +81,8 @@
         personThis.greet();
         //normal function
         function greetThis(){
-            this.alert();
-            console.log(this);
+            //this.alert();
+            //console.log(this);
         }
         greetThis();
         //Prototype
