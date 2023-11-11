@@ -8,6 +8,68 @@
 <body>
     <h1>OOP</h1>
     <script>
+        const traineeList = [
+        {
+            name: "Nguyen Van A",
+            id: 1,
+        },
+        {
+            name: "Nguyen Van B",
+            id: 2,
+        },
+        {
+            name: "Nguyen Van C",
+            id: 3,
+        },
+        {
+            name: "Nguyen Van A",
+            id: 1,
+        }
+        ];
+        const uniqueTrainees = [...new Set(traineeList.map(obj => JSON.stringify(obj)))].map((str) => JSON.parse(str));
+        console.log(uniqueTrainees);
+
+      
+        //
+        const obj1 = {name: "Ford"};
+        const obj2 = {name: "Honda"};
+        const obj3 = {name: "Ford"};
+        const objSet = new Set([obj1,obj2,obj3]);
+        console.log(objSet)
+        //
+        var s = new Set([1,2,3,3,4,6,6]);
+        console.log(s);
+        s.add(5);
+        s.delete(4)
+        s.size;
+        console.log(s)
+        //
+        var generateNumber = generators(90);
+        console.log(generateNumber.next().value);
+        console.log(generateNumber.next().value);
+        console.log(generateNumber.next().value);
+        console.log(generateNumber.next().value);
+        console.log(generateNumber.next().value);
+        
+
+
+        function* generators(number){
+            yield number;
+            yield* anotherGenerators(number);
+            yield number +10
+        }
+        function* anotherGenerators(number){
+            yield number +1;
+            yield number +2;
+            yield number +3;
+        }
+       
+        //
+        const numbers = [1,2,3,4]
+        for(const [index, element] of numbers.entries()){
+            console.log(element, index)
+        };
+        //
         createToken = () => {
             var s = Symbol();
             return {
