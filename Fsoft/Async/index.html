@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>ASYNCHRNOUS</h1>
+    <p id="typing-effect"></p>
+    <script>
+        // Lifo  - last in first out = fist in last out
+        //ex4
+        const doSomething = (callback) => {
+            console.log("execute");
+
+            callback();
+        };
+        const callbackFunction = () => {
+            console.log("Task completed");
+        };
+        doSomething(callbackFunction);
+
+        //ex3
+        const text = "Hello, JavaScript!"
+        let index = 0;
+
+        const typingEffect = () => {
+            const element = document.getElementById("typing-effect");
+            element.textContent += text[index];
+            index++;
+
+            if(index >= text.length){
+                console.log("Typing done!");
+                clearInterval(interval);
+            }
+        };
+        const interval = setInterval(typingEffect,400);
+
+        //ex2
+        console.log("Start");
+
+        const saySomething = () => {
+            console.log("Something...")
+        }
+
+        setInterval(saySomething, 3000);
+        clearInterval(saySomething);
+        console.log("End");
+        //EX1
+        console.log("Start");
+
+        setTimeout(() => {
+            console.log("Timeout 1");
+        }, 0);
+
+        setTimeout(() => {
+            console.log("Timeout 2");
+        }, 0);
+
+        console.log("End");
+        console.log("Running");
+    </script>
+</body>
+</html>
