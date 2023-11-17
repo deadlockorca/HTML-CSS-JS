@@ -10,6 +10,30 @@
     <p id="typing-effect"></p>
     <script>
         // Lifo  - last in first out = fist in last out
+        //ex5
+       
+        function getData(url, cb){
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == XMLHttpRequest.DONE){
+                    if(xhr.status === 200){
+                        cb(undefined, JSON.parse(xhr.responseText));
+                    }else{
+                        cb(new Error(xhr.statusText));
+                    }
+                }
+            };
+            xhr.open('GET', url, true);
+            xhr.send();
+
+        }
+        var url = "http://jsonplaceholder.typicode.com/todos/";
+        getData(url + 1, function (error, value){
+            if(error){
+                return console.log(error);
+            }
+            console.log(value)
+        });
         //ex4
         const doSomething = (callback) => {
             console.log("execute");
