@@ -1,3 +1,38 @@
+//const promiseWithTwoRejected = [
+  //  Promise.resolve("🍎 #1"),
+    //new Promise((_, reject) => setTimeout(reject, 1000, "🍏 #2")),
+    //"🍎 #3",
+    //new Promise((_, reject) => setTimeout(reject, 3000, "🍏 #4")),
+//];
+//Promise.allSettled(promisesWithTwoRejected).then((apple) => {
+  //  console.log( apple);
+//});
+
+//Ex
+const promiseAS1 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        resolve("Promise 1 AS resolved");
+    }, 2000);
+});
+const promiseAS2 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        resolve("Promise 2 AS resolved");
+    }, 4000);
+});
+const promiseAS3 = new Promise((resolve, reject) =>{
+    setTimeout(() => {
+        reject("Promise 3 AS resolved");
+    }, 1000);
+});
+Promise.allSettled([promiseAS1, promiseAS2, promiseAS3])
+.then((result) => {
+    console.log("All promises settled");
+})
+.catch((error) => {
+    console.log("Error: ", error);
+});
+
+//ex 
 const promise1 = new Promise((resolve, reject) => {
     setTimeout(() => {
         resolve("Promise 1 resolved")
@@ -86,7 +121,6 @@ const downloadFile = (url) => {
 
     });
 };
-
 downloadFile("http://abc.com/File.jpg")
 .then((data) => {
     console.log("File downloaded: ", data);
