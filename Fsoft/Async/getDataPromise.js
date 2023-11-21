@@ -1,3 +1,97 @@
+const keywords = ["h","e","l","l","0"];
+const p = keywords.map((word) => 
+getDataPromise(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&format=json&formatversion=2&search=${query}&namespace=0&limit=10`
+)
+);
+console.log(p);
+Promise.all(p).then((data) => {
+    console.log(data);
+});
+
+//EX2
+const getData = (url, callback) => {
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            if (xhr.status == 200) {
+                callback(undefined, JSON.parse(xhr.responseText));
+            } else {
+                callback(new Error(xhr.responseText));
+            }
+        }
+    }
+    xhr.open("GET", url, true);
+    xhr.send();
+}
+
+
+const getDataPromise = (url) => {
+    return new Promise(function(resolve, reject){
+        getData(url, function(error, data){
+            if(error){
+                reject(error);
+            }
+            resolve(data);
+        })
+    })
+}
+const input = document.querySelector("input");
+const button = document.querySelector("button");
+const ul = document.querySelector("ul");
+
+let timer;
+
+input.addEventListener("keyup", (e) => {
+    const query = e.target.value;
+
+    if(timer){
+        clearTimeout(timer);
+    }
+    timer = setTimeout(() => {
+
+        getData(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&format=json&formatversion=2&search=${query}&namespace=0&limit=10`,
+            function (error, data) {
+                if (error) {
+                    console.log(error);
+                    return;
+                }
+                console.log(data);
+                ul.innerHTML = "";
+                data[1].forEach((item, index) => {
+                    ul.innerHTML += `<li><a href=${data[3][index]}>${item}</a></li>`
+                });
+            })
+            .catch((error) => console.log(error))
+            .then(() => {
+                return getDataPromise(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&format=json&formatversion=2&search=${query}&namespace=0&limit=10`);
+            })
+            .then((data) => {
+                console.log(data);
+                return getDataPromise(`https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&format=json&formatversion=2&search=${data[1][1]}&namespace=0&limit=10`)
+            .then((data) => {
+                console.log(data);
+                });    
+            })
+    }, 500)
+})
+//Promise.any
+Promise.any([
+    Promise.reject("V 1"),
+    Promise.resolve("V 2"),
+    Promise.reject("V 3"),
+    Promise.reject("V 4"),
+])
+.then((value) => console.log(value))
+.catch((error) => console.log(error));
+//Promise Race
+const promiseRacing = [
+    new Promise((resolve, reject) => setTimeout(reject, 1000, "🍏 #1")),
+    new Promise((resolve, reject) => setTimeout(resolve, 2000, "🍎 #2")),
+    new Promise((resolve, reject) => setTimeout(resolve, 3000, "🍏 #3")),
+];
+Promise.race(promiseRacing)
+.then((value) => console.log(`The winner is ${value}`))
+.catch((error) => console.log(`The loser is ${error}`));
 //const promiseWithTwoRejected = [
   //  Promise.resolve("🍎 #1"),
     //new Promise((_, reject) => setTimeout(reject, 1000, "🍏 #2")),
@@ -76,32 +170,7 @@ Promise.all(promiseWithOneReject)
     //(result) => alert(error)
 //);
 
-const getData = (url, callback) => {
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == XMLHttpRequest.DONE) {
-            if (xhr.status == 200) {
-                callback(undefined, JSON.parse(xhr.responseText));
-            } else {
-                callback(new Error(xhr.responseText));
-            }
-        }
-    }
-    xhr.open("GET", url, true);
-    xhr.send();
-}
 
-
-const getDataPromise = (url) => {
-    return new Promise(function(resolve, reject){
-        getData(url, function(error, data){
-            if(error){
-                reject(error);
-            }
-            resolve(data);
-        })
-    })
-}
 
 const downloadFile = (url) => {
     return new Promise((resolve, reject) => {
