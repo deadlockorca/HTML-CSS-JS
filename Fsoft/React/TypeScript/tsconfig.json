@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "lib": ["es6", "dom"],
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "result",
+        "strict": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "baseUrl": "./src",
+        "paths": {
+            "components/*": ["components/*"],
+            "containers/*": ["containers/*"],
+            "actions/*": ["actions/*"],
+            "reducers/*": ["reducers/*"],
+            "store/*": ["store/*"],
+            "utils/*": ["utils/*"],
+            "types/*": ["types/*"]
+        },
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true
+    },
+    }
