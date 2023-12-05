@@ -5,6 +5,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import React from 'react'
 import Dropdown from './Component/Dropdown'
+import Persion from './pages/basic-hooks/Persion'
+import ReactMemo from './pages/basic-hooks/react-memo'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -44,6 +46,8 @@ class App extends React.Component {
     const cats = ["Bella", "Meow", "Kitty", "Miu"];
     return (
       <>
+      <Persion></Persion>
+      <ReactMemo></ReactMemo>
       <div className='row'>
         <div className='col-6'>
           <Dropdown option = {phones}/>
