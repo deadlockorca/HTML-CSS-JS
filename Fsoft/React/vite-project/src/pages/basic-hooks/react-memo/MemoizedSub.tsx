@@ -12,4 +12,4 @@ const MemoizedSub = ({name} : SubProp) => {
 
 export default React.memo(MemoizedSub, (prevProps, nextProps) => {
     return prevProps.name === nextProps.name;
-});
+}); 
