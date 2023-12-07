@@ -1,0 +1,9 @@
+.select {
+    font: inherit;
+    appearance: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0;
+    border: 2px solid blue;
+    background: #b4e1fc;
+    color: #015c91;
+}
