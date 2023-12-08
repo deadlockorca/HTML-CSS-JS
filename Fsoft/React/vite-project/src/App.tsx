@@ -63,7 +63,7 @@ const charSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
   setSeclectedState(selectedState as ElectionState);
 }
 const reRenderHandler = () => {
-  setSeclectedState({...selectedState});
+  setSeclectedState({...selectedState})
 }
 return (<>
   <StatePicker 
