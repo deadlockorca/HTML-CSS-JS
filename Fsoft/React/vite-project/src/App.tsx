@@ -10,6 +10,7 @@ import ReactMemo from './pages/basic-hooks/react-memo'
 import StatePicker from './pages/basic-hooks/react-memo/react-memo-election/StatePicker'
 import { ElectionState } from './pages/basic-hooks/react-memo/react-memo-election/Election.model'
 import Summary from './pages/basic-hooks/react-memo/react-memo-election/Summary'
+import StyledComponents from './pages/react-styling/styled-components'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -65,19 +66,23 @@ const charSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
 const reRenderHandler = () => {
   setSeclectedState({...selectedState})
 }
-return (<>
-  <StatePicker 
-  option={elections}
-  selectedId = {selectedState?.id}
-  onSelectState={charSelectHandler} 
-/>
-<hr />
-<Summary state={selectedState}/>
-<hr />
-{selectedState.candidates && (
-  <button onClick={reRenderHandler} >Re- select</button>
-)}
-</>)
+return (
+  <StyledComponents></StyledComponents>
+)
+// return (<>
+//   <StatePicker 
+//   option={elections}
+//   selectedId = {selectedState?.id}
+//   onSelectState={charSelectHandler} 
+// />
+// <hr />
+// <Summary state={selectedState}/>
+// <hr />
+// {selectedState.candidates && (
+//   <button onClick={reRenderHandler} >Re- select</button>
+  
+// )}
+// </>)
 }
 // class App extends React.Component {
 //   constructor(props : string) {
