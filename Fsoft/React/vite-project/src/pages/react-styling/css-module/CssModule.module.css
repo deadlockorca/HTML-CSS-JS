@@ -1,0 +1,56 @@
+
+.counter {
+    display: flex;
+    align-items: center;
+    border: 2px solid chocolate;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+:global(.main-content){
+    .counter{
+        border-color: aqua;
+    }
+    :gloebal(.counter){
+        color: orangered;
+    }
+}
+.button {
+    font-size: 1.5em;
+    border-radius: 5px;
+    border: 2px dotted blue;
+    width: 40px;
+    height: 40px;
+    background-color: chocolate;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0;
+}
+.button:active {
+    opacity: 0.2;
+    transform: scale(0.5);
+}
+.button:first {
+    border-color: blueviolet;
+}
+:global(.spanRotate) {
+    font-size: 2rem;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 5px;
+    animation: rotate 2s linear infinite;
+}
+@media (min-width: 992px){
+    :global(.spanRotate) {
+        background-color: aqua;
+    }
+}
+@keyframes rotate {
+    0% {
+        transform: translateY(0%);
+    }
+    100% {
+        transform: translateY(100%);
+    }
+}

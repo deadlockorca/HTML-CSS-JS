@@ -11,6 +11,7 @@ import StatePicker from './pages/basic-hooks/react-memo/react-memo-election/Stat
 import { ElectionState } from './pages/basic-hooks/react-memo/react-memo-election/Election.model'
 import Summary from './pages/basic-hooks/react-memo/react-memo-election/Summary'
 import StyledComponents from './pages/react-styling/styled-components'
+import CssModule from './pages/react-styling/css-module/CssModule'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -67,7 +68,9 @@ const reRenderHandler = () => {
   setSeclectedState({...selectedState})
 }
 return (
-  <StyledComponents></StyledComponents>
+  //<StyledComponents></StyledComponents>
+  <CssModule></CssModule>
+  
 )
 // return (<>
 //   <StatePicker 
