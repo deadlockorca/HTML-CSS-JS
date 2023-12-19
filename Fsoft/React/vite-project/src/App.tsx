@@ -1,4 +1,4 @@
-import { ChangeEvent, ReactNode, useEffect, useState } from 'react'
+import { ChangeEvent, ReactNode, Suspense, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 
@@ -12,6 +12,17 @@ import { ElectionState } from './pages/basic-hooks/react-memo/react-memo-electio
 import Summary from './pages/basic-hooks/react-memo/react-memo-election/Summary'
 import StyledComponents from './pages/react-styling/styled-components'
 import CssModule from './pages/react-styling/css-module/CssModule'
+import UserCRUD from './pages/debugging/tables/UserCRUD'
+import EditUser from './pages/debugging/forms/EditUser'
+import ErrorBoundaryClass from './pages/error-boundaries/ErrorBoundaryClass'
+import ErrorBoundaryFunction from './pages/error-boundaries/ErrorBoundaryFunction'
+import BuggyCounter from './pages/error-boundaries/BuggyCounter'
+import Modal from './pages/react-portal/Modal'
+import styles from './App.module.css'
+import { BrowserRouter, NavLink} from 'react-router-dom'
+import { Route, Routes } from 'react-router'
+import HomeRoute from './pages/react-router-dom/HomeRoute'
+import AboutRoute from './pages/react-router-dom/AboutRoute'
 
 // function App() {
 //   const [count, setCount] = useState(0)
@@ -67,9 +78,57 @@ const charSelectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
 const reRenderHandler = () => {
   setSeclectedState({...selectedState})
 }
+const [someKey, setSomeKey] = useState(null);
+
+const [openModal, setOpenModal] = useState(false);
 return (
+  <>
+  <BrowserRouter>
+  <div className={styles.App}>
+    <header>
+      <nav className='navbar navbar-expand navbar-light bg-light'>
+        <a href="">Fsoft Academy</a>
+        <ul className='navbar-nav'>
+          <li className='nav-item'>
+            <NavLink to='/' className='nav-link' >Home</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/about' className='nav-link'>About</NavLink>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Main content</h2>
+      <Suspense fallback={<h1>Loading</h1>}>
+        <Routes>
+          <Route path='/' Component={HomeRoute}></Route>
+            <Route path='/about' Component={AboutRoute} />
+        </Routes>
+      </Suspense>
+    </main>
+  </div>
+  </BrowserRouter>
+  {/* <Modal open = {openModal}>
+    <h2>Dialog</h2>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <p>Lorem ipsum dolor sit amet.</p>
+    <div style={{flex : 1}}>
+      <button className='button' onClick={() => setOpenModal(false)}>OK</button>
+    </div>
+  </Modal>
+  <button className='button' onClick={() => setOpenModal(true)}>Open modal</button> */}
+  </>
+
+  // <ErrorBoundary FallbackComponent = {ErrorBoundaryFunction}
+  // onReset = { () => setSomeKey(null)}
+  // resetKeys = {[someKey]}>
+  //   <BuggyCounter></BuggyCounter>
+  // </ErrorBoundary>
+  // <UserCRUD></UserCRUD>
   //<StyledComponents></StyledComponents>
-  <CssModule></CssModule>
+  // <CssModule></CssModule>
   
 )
 // return (<>
