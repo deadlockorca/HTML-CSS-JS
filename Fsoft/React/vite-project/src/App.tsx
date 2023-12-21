@@ -22,10 +22,11 @@ import styles from './App.module.css'
 import { BrowserRouter, NavLink, Route} from 'react-router-dom'
 import HomeRoute from './pages/react-router-dom/HomeRoute'
 import AboutRoute from './pages/react-router-dom/AboutRoute'
-import { Switch } from 'react-router-dom'
-import { Redirect } from 'react-router-dom'
+import { Routes } from 'react-router-dom'
 import UserRoute from './pages/react-router-dom/UserRoute'
 import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
+
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -91,9 +92,61 @@ const handleLogin = () => {
   setIsLoggedIn((prev) => !prev);
 }
 const LazyComponent = lazy(() => import('./pages/react-router-dom/LazyLoadRoute'));
+const routes = [
+  { path: "", element: <HomeRoute/>},
+  { path: "about", element: <AboutRoute/>},
+  { path: "info/:code/:firstName", element: <AboutRoute/>},
+  {path: "/login", element : (
+    <>
+  <h2>Login Page</h2>
+  <h3>Login status: {""}
+  <label style = {{color: "blue"}}>
+  {isLoggedIn ? "LoggedIn" : "Not LoggedIn"}
+  </label></h3>
+  <button className='btn btn-primary' onClick={handleLogin}>Toggle Login</button>
+  </>)},
+  {path: "users", element: isLoggedIn ? <UserRoute/> : <Navigate to='/login'/>},
+];
+const navLink = [
+  {path: "", title: "Home"},
+  {path: "about", title: "About"},
+  {path: "info/100/Hieu", title: "Info"},
+  {path: "login", title: "Login"},
+  {path: "users", title: "Users"},
+]
 return (
   <>
   <BrowserRouter>
+  <div className={styles.App}>
+    <header>
+      <nav className='navbar navbar-expand navbar-light bg-light'> 
+      <ul className='navbar-nav'>
+        {navLink.map((link) => (
+        <li className='nav-item'>
+         <NavLink
+         to={link.path}
+         className={({ isActive, isPending}) => (isActive ? "active nav-link" : "nav-link")}>{link.title}</NavLink>
+        </li>
+        ))}
+      </ul>
+      </nav>
+    </header>
+    <main>
+      <Suspense fallback={<h2>...Loading...</h2>}>
+        <Routes>
+          {routes.map((route) => (
+            <Route
+            key={route.path}
+            path={route.path}
+            element={route.element}>
+            </Route>
+          ))}
+        </Routes>
+      </Suspense>
+    </main>
+  </div>
+  </BrowserRouter>
+  {/* <BrowserRouter>
   <div className={styles.App}>
     <header>
       <nav className='navbar navbar-expand navbar-light bg-light'>
@@ -128,7 +181,7 @@ return (
           <Route path='/about' component={AboutRoute} />
           <Route path='/info/:code/:lastName' component={AboutRoute}></Route>
           {/* Route Guard */}
-          <Route path= '/users'
+          {/* <Route path= '/users'
           render={() => 
           isLoggedIn ? <UserRoute/> : <Redirect to='/login'/>}>
           </Route>
@@ -142,11 +195,11 @@ return (
           </Route>
           <Route path='/lazy' component={LazyComponent}></Route>
           <Route component={NotFound}></Route>
-        </Switch>
-      </Suspense>
-    </main>
-  </div>
-  </BrowserRouter>
+        </Switch> */}
+  {/* //     </Suspense> */}
+  {/* //   </main> */}
+  {/* </div> */}
+  {/* // </BrowserRouter> */}
   {/* <Modal open = {openModal}>
     <h2>Dialog</h2>
     <p>Lorem ipsum dolor sit amet.</p>
@@ -165,7 +218,7 @@ return (
   //   <BuggyCounter></BuggyCounter>
   // </ErrorBoundary>
   // <UserCRUD></UserCRUD>
-  //<StyledComponents></StyledComponents>
+  //<StyledComponents></StyledComponents> */}
   // <CssModule></CssModule>
   
 )

@@ -22,11 +22,11 @@ const UserRoute = () => {
                 <Link to="/users?userId=3&name=User3">User 3 detail</Link>
             </li>
         </ul>
-        <Prompt when={text.length>0} message = {"Do you want to go"}></Prompt>
+        {/* <Prompt when={text.length>0} message = {"Do you want to go"}></Prompt> */}
         <textarea onChange={handleChange}></textarea>
-        <Switch>
+        {/* <Switch>
             <Route path={"/users"} component={UserDetail}></Route>
-        </Switch>
+        </Switch> */}
     </div>
   )
 }
