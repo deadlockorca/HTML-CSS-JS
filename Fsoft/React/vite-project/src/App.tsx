@@ -19,11 +19,16 @@ import ErrorBoundaryFunction from './pages/error-boundaries/ErrorBoundaryFunctio
 import BuggyCounter from './pages/error-boundaries/BuggyCounter'
 import Modal from './pages/react-portal/Modal'
 import styles from './App.module.css'
-import { BrowserRouter, NavLink} from 'react-router-dom'
-import { Route, Routes } from 'react-router'
+import { BrowserRouter, NavLink, Route} from 'react-router-dom'
 import HomeRoute from './pages/react-router-dom/HomeRoute'
 import AboutRoute from './pages/react-router-dom/AboutRoute'
+import { Switch } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
+import UserRoute from './pages/react-router-dom/UserRoute'
+import { lazy } from 'react';
 
+
+const NotFound = () => <h2>404- NOT FOUND</h2>
 // function App() {
 //   const [count, setCount] = useState(0)
 
@@ -81,6 +86,11 @@ const reRenderHandler = () => {
 const [someKey, setSomeKey] = useState(null);
 
 const [openModal, setOpenModal] = useState(false);
+const [isLoggedIn, setIsLoggedIn] = useState(false);
+const handleLogin = () => {
+  setIsLoggedIn((prev) => !prev);
+}
+const LazyComponent = lazy(() => import('./pages/react-router-dom/LazyLoadRoute'));
 return (
   <>
   <BrowserRouter>
@@ -90,10 +100,22 @@ return (
         <a href="">Fsoft Academy</a>
         <ul className='navbar-nav'>
           <li className='nav-item'>
-            <NavLink to='/' className='nav-link' >Home</NavLink>
+            <NavLink to='/' exact className='nav-link' activeClassName='active' >Home</NavLink>
           </li>
           <li className='nav-item'>
-            <NavLink to='/about' className='nav-link'>About</NavLink>
+            <NavLink to='/about' className='nav-link' activeClassName='active'>About</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/info/100/Hieu' className='nav-link' activeClassName='active'>Info</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/info/100/Hieu?key1=Music&key2=Something' className='nav-link' activeClassName='active'>Info Search</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/users' className='nav-link' activeClassName='active'>User Info</NavLink>
+          </li>
+          <li className='nav-item'>
+            <NavLink to='/lazy' className='nav-link' activeClassName='active'> Lazy</NavLink>
           </li>
         </ul>
       </nav>
@@ -101,10 +123,26 @@ return (
     <main>
       <h2>Main content</h2>
       <Suspense fallback={<h1>Loading</h1>}>
-        <Routes>
-          <Route path='/' Component={HomeRoute}></Route>
-            <Route path='/about' Component={AboutRoute} />
-        </Routes>
+        <Switch>
+          <Route path='/' exact component={HomeRoute}></Route>
+          <Route path='/about' component={AboutRoute} />
+          <Route path='/info/:code/:lastName' component={AboutRoute}></Route>
+          {/* Route Guard */}
+          <Route path= '/users'
+          render={() => 
+          isLoggedIn ? <UserRoute/> : <Redirect to='/login'/>}>
+          </Route>
+          <Route path = '/login'>
+            <h2>Login Page</h2>
+            <h3>Login status: {""}
+            <label style = {{color: "blue"}}>
+            {isLoggedIn ? "LoggedIn" : "Not LoggedIn"}
+            </label></h3>
+            <button className='btn btn-primary' onClick={handleLogin}>Toggle Login</button>
+          </Route>
+          <Route path='/lazy' component={LazyComponent}></Route>
+          <Route component={NotFound}></Route>
+        </Switch>
       </Suspense>
     </main>
   </div>
