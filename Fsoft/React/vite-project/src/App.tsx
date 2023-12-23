@@ -105,9 +105,10 @@ const routes = [
   </label></h3>
   <button className='btn btn-primary' onClick={handleLogin}>Toggle Login</button>
   </>)},
-  {path: "users", element: isLoggedIn ? <UserRoute/> : <Navigate to='/login'/>},
+  {path: "info/:code/:firstName", element: <AboutRoute/>},
+  {path: "users/*", element: isLoggedIn ? <UserRoute/> : <Navigate to='/login'/>},
 ];
-const navLink = [
+const navLinks = [
   {path: "", title: "Home"},
   {path: "about", title: "About"},
   {path: "info/100/Hieu", title: "Info"},
@@ -121,7 +122,7 @@ return (
     <header>
       <nav className='navbar navbar-expand navbar-light bg-light'> 
       <ul className='navbar-nav'>
-        {navLink.map((link) => (
+        {navLinks.map((link) => (
         <li className='nav-item'>
          <NavLink
          to={link.path}

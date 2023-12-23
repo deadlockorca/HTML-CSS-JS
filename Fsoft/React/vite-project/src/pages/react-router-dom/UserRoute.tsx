@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Link, Prompt, Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
 import { Switch } from 'react-router-dom'
 import UserDetail from './UserDetail';
+import Topics from './utils/Topics';
 
 const UserRoute = () => {
     const [text, setText] = useState('');
@@ -24,6 +25,7 @@ const UserRoute = () => {
         </ul>
         {/* <Prompt when={text.length>0} message = {"Do you want to go"}></Prompt> */}
         <textarea onChange={handleChange}></textarea>
+        <Topics></Topics>
         {/* <Switch>
             <Route path={"/users"} component={UserDetail}></Route>
         </Switch> */}
