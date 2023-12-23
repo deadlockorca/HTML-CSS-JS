@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
-import { RouteChildrenProps } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
-const UserDetail = (props: RouteChildrenProps) => {
-    const queryParam = new URLSearchParams(props.location.search);
+const UserDetail = () => {
+    const location = useLocation();
+    const queryParam = new URLSearchParams(location.search);
     console.log(queryParam);
   return (
     <Fragment>

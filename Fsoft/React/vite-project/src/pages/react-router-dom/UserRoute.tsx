@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Link, Route } from 'react-router-dom'
-import { Switch } from 'react-router-dom'
 import UserDetail from './UserDetail';
 import Topics from './utils/Topics';
 

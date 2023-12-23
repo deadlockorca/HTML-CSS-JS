@@ -26,6 +26,8 @@ import { Routes } from 'react-router-dom'
 import UserRoute from './pages/react-router-dom/UserRoute'
 import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
+import ReactBasicForm from './pages/react-form/basic-form/ReactBasicForm'
+import ReactFormik from './pages/react-form/react-formik/ReactFormik'
 
 
 
@@ -107,6 +109,8 @@ const routes = [
   </>)},
   {path: "info/:code/:firstName", element: <AboutRoute/>},
   {path: "users/*", element: isLoggedIn ? <UserRoute/> : <Navigate to='/login'/>},
+  {path: "react-form", element: <ReactBasicForm/>},
+  {path: "react-formik", element: <ReactFormik/>},
 ];
 const navLinks = [
   {path: "", title: "Home"},
@@ -114,7 +118,9 @@ const navLinks = [
   {path: "info/100/Hieu", title: "Info"},
   {path: "login", title: "Login"},
   {path: "users", title: "Users"},
-]
+  {path: "react-form", title: "React Basic Form"},
+  {path: "react-formik", title: "React Formik"},
+];
 return (
   <>
   <BrowserRouter>
