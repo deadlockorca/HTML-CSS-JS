@@ -28,6 +28,7 @@ import { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 import ReactBasicForm from './pages/react-form/basic-form/ReactBasicForm'
 import ReactFormik from './pages/react-form/react-formik/ReactFormik'
+import ReactFormikNew from './pages/react-form/react-formik/new-demo/ReactFormikNew'
 
 
 
@@ -111,6 +112,7 @@ const routes = [
   {path: "users/*", element: isLoggedIn ? <UserRoute/> : <Navigate to='/login'/>},
   {path: "react-form", element: <ReactBasicForm/>},
   {path: "react-formik", element: <ReactFormik/>},
+  {path: "react-formik-new", element: <ReactFormikNew/>},
 ];
 const navLinks = [
   {path: "", title: "Home"},
@@ -120,6 +122,7 @@ const navLinks = [
   {path: "users", title: "Users"},
   {path: "react-form", title: "React Basic Form"},
   {path: "react-formik", title: "React Formik"},
+  {path: "react-formik-new", title: "React Formik New"},
 ];
 return (
   <>
