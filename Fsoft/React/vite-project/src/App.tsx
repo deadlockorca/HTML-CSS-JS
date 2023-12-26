@@ -29,7 +29,7 @@ import { Navigate } from 'react-router-dom';
 import ReactBasicForm from './pages/react-form/basic-form/ReactBasicForm'
 import ReactFormik from './pages/react-form/react-formik/ReactFormik'
 import ReactFormikNew from './pages/react-form/react-formik/new-demo/ReactFormikNew'
-
+import ReactFormikList from './pages/react-form/react-formik/react-formik-list/ReactFormikList'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -113,6 +113,7 @@ const routes = [
   {path: "react-form", element: <ReactBasicForm/>},
   {path: "react-formik", element: <ReactFormik/>},
   {path: "react-formik-new", element: <ReactFormikNew/>},
+  {path: "react-formik-list", element: <ReactFormikList/>},
 ];
 const navLinks = [
   {path: "", title: "Home"},
@@ -123,6 +124,7 @@ const navLinks = [
   {path: "react-form", title: "React Basic Form"},
   {path: "react-formik", title: "React Formik"},
   {path: "react-formik-new", title: "React Formik New"},
+  {path: "react-formik-list", title: "React Formik List"},
 ];
 return (
   <>
