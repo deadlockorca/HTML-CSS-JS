@@ -30,6 +30,8 @@ import ReactBasicForm from './pages/react-form/basic-form/ReactBasicForm'
 import ReactFormik from './pages/react-form/react-formik/ReactFormik'
 import ReactFormikNew from './pages/react-form/react-formik/new-demo/ReactFormikNew'
 import ReactFormikList from './pages/react-form/react-formik/react-formik-list/ReactFormikList'
+import WithFetch from './pages/sever-interaction/WithFetch'
+import WithAxiosNormal from './pages/sever-interaction/WithAxiosNormal'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -114,6 +116,9 @@ const routes = [
   {path: "react-formik", element: <ReactFormik/>},
   {path: "react-formik-new", element: <ReactFormikNew/>},
   {path: "react-formik-list", element: <ReactFormikList/>},
+  {path: "with-fetch", element: <WithFetch/>},
+  {path: "with-axios", element: <WithAxiosNormal/>},
+
 ];
 const navLinks = [
   {path: "", title: "Home"},
@@ -125,6 +130,8 @@ const navLinks = [
   {path: "react-formik", title: "React Formik"},
   {path: "react-formik-new", title: "React Formik New"},
   {path: "react-formik-list", title: "React Formik List"},
+  {path: "with-fetch", title: "With Fetch"},
+  {path: "with-axios", title: "With Axios"},
 ];
 return (
   <>
