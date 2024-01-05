@@ -34,6 +34,7 @@ import WithFetch from './pages/sever-interaction/WithFetch'
 import WithAxiosNormal from './pages/sever-interaction/WithAxiosNormal'
 import WithAxiosService from './pages/sever-interaction/WithAxiosService'
 import UserContext from './pages/react-context/UserContext'
+import MobxComponent from './pages/react-mobx/components/MobxComponent'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -122,6 +123,7 @@ const routes = [
   {path: "with-axios", element: <WithAxiosNormal/>},
   {path: "with-axios-service", element: <WithAxiosService/>},
   {path: "user-context", element: <UserContext/>},
+  {path: "react-mobx", element: <MobxComponent/>},
 
 ];
 const navLinks = [
@@ -138,6 +140,7 @@ const navLinks = [
   {path: "with-axios", title: "With Axios"},
   {path: "with-axios-service", title: "With Axios Service"},
   {path: "user-context", title: "User Context"},
+  {path: "react-mobx", title: "React Mobx"},
 
 ];
 return (
