@@ -36,6 +36,7 @@ import WithAxiosService from './pages/sever-interaction/WithAxiosService'
 import UserContext from './pages/react-context/UserContext'
 import MobxComponent from './pages/react-mobx/components/MobxComponent'
 import Counter from './pages/react-mobx/components/Counter'
+import ReduxComponent from './pages/react-redux/components/ReduxComponent'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -126,6 +127,7 @@ const routes = [
   {path: "user-context", element: <UserContext/>},
   {path: "react-mobx", element: <MobxComponent/>},
   {path: "react-mobx-counter", element: <Counter/>},
+  {path: "react-redux", element: <ReduxComponent/>},
 
 ];
 const navLinks = [
@@ -144,6 +146,7 @@ const navLinks = [
   {path: "user-context", title: "User Context"},
   {path: "react-mobx", title: "React Mobx"},
   {path: "react-mobx-counter", title: "React Mobx Counter"},
+  {path: "react-redux", title: "React Redux"},
 
 ];
 return (
