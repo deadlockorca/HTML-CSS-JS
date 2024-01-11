@@ -37,6 +37,7 @@ import UserContext from './pages/react-context/UserContext'
 import MobxComponent from './pages/react-mobx/components/MobxComponent'
 import Counter from './pages/react-mobx/components/Counter'
 import ReduxComponent from './pages/react-redux/components/ReduxComponent'
+import ReactBootstrap from './pages/react-bootstrap/ReactBootstrap'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -128,6 +129,7 @@ const routes = [
   {path: "react-mobx", element: <MobxComponent/>},
   {path: "react-mobx-counter", element: <Counter/>},
   {path: "react-redux", element: <ReduxComponent/>},
+  {path: "react-bootstrap", element: <ReactBootstrap/>},
 
 ];
 const navLinks = [
@@ -147,6 +149,7 @@ const navLinks = [
   {path: "react-mobx", title: "React Mobx"},
   {path: "react-mobx-counter", title: "React Mobx Counter"},
   {path: "react-redux", title: "React Redux"},
+  {path: "react-bootstrap", title: "React Bootstrap"},
 
 ];
 return (
@@ -157,7 +160,7 @@ return (
       <nav className='navbar navbar-expand navbar-light bg-light'> 
       <ul className='navbar-nav'>
         {navLinks.map((link) => (
-        <li className='nav-item'>
+        <li className='nav-item' key={link.path}>
          <NavLink
          to={link.path}
          className={({ isActive, isPending}) => (isActive ? "active nav-link" : "nav-link")}>{link.title}</NavLink>

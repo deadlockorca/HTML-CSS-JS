@@ -2,6 +2,7 @@ export interface CounterState {
     countA: number;
     countB: number;
     total: number;
+    quantity: number;
 }
 
 export interface ActionProps {
@@ -24,4 +25,5 @@ export interface AddressProps {
 export interface RootState {
     counterReducer: CounterState;
     academyReducer: AcademyState;
+    user: any;
 }

@@ -16,6 +16,11 @@ const academyReducer = (state = initState, action: ActionProps ) => {
             ...state,
             address: state.address.reverse()
         };
+        case ACTION_TYPES.CHANGE_ACADEMY_NAME:
+            return {
+                ...state,
+                name: action.payload
+            };
         default:
             return state;
     }

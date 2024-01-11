@@ -3,7 +3,7 @@ import React, { Fragment, useState } from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { RootState } from '../types/model'
-import { swapAcademyAddress } from '../actions/academy.action'
+import { changeAcademyName, swapAcademyAddress } from '../actions/academy.action'
 import { useDispatch } from 'react-redux'
 
 const AcademyInfo = () => {
@@ -24,7 +24,7 @@ const AcademyInfo = () => {
                     <TextField label='Academy name' defaultValue={academyName} onChange={(event:React.ChangeEvent<HTMLInputElement>) => setAcademyName(event.target.value)}></TextField>
                 </Grid>
                 <Grid item xs={6}>
-                    <Button variant='contained'>Change name</Button>
+                    <Button variant='contained' onClick={() => dispatch(changeAcademyName(academyName))}>Change name</Button>
                 </Grid>
             </Grid>
         </TitleBlock>

@@ -4,6 +4,7 @@ import FooterRedux from './FooterRedux'
 import { Box, Tab, Tabs } from '@mui/material'
 import CounterRedux from './CounterRedux'
 import AcademyInfo from './AcademyInfo'
+import User from './User'
 
 const ReduxComponent = () => {
     const [value, setValue] = useState<number>(0);
@@ -17,11 +18,13 @@ const ReduxComponent = () => {
             <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                 <Tabs value={value} onChange={handleChange}>
                     <Tab label='Counter'></Tab>
-                    <Tab label='INFO'></Tab>
+                    <Tab label='ACADEMY INFO'></Tab>
+                    <Tab label='USER'></Tab>
                 </Tabs>
             </Box>
             <CustomTabPanel index={0} value={value}><CounterRedux /></CustomTabPanel>
             <CustomTabPanel index={1} value={value}><AcademyInfo /></CustomTabPanel>
+            <CustomTabPanel index={2} value={value}><User /></CustomTabPanel>
         </Box>
         <FooterRedux />
     </Fragment>
