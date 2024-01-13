@@ -39,6 +39,10 @@ import Counter from './pages/react-mobx/components/Counter'
 import ReduxComponent from './pages/react-redux/components/ReduxComponent'
 import ReactBootstrap from './pages/react-bootstrap/ReactBootstrap'
 import RecipeBooks from './pages/react-bootstrap/RecipeBooks'
+import EnhancedForm from './pages/comment-recipes/WithFormik'
+import AppHOC from './pages/comment-recipes/APpHOC'
+import RenderProps from './pages/comment-recipes/RenderProps'
+
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -132,6 +136,9 @@ const routes = [
   {path: "react-redux", element: <ReduxComponent/>},
   {path: "react-bootstrap", element: <ReactBootstrap/>},
   {path: "recipe-books", element: <RecipeBooks/>},
+  {path: "with-formik", element: <EnhancedForm/>},
+  {path: "hoc", element: <AppHOC/>},
+  {path: "render-props", element: <RenderProps/>},
 
 ];
 const navLinks = [
@@ -153,6 +160,9 @@ const navLinks = [
   {path: "react-redux", title: "React Redux"},
   {path: "react-bootstrap", title: "React Bootstrap"},
   {path: "recipe-books", title: "Recipe Books"},
+  {path: "with-formik", title: "With-Formik"},
+  {path: "hoc", title: "HOC"},
+  {path: "render-props", title: "Render Props"},
 
 ];
 return (
