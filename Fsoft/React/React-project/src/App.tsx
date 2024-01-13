@@ -38,6 +38,7 @@ import MobxComponent from './pages/react-mobx/components/MobxComponent'
 import Counter from './pages/react-mobx/components/Counter'
 import ReduxComponent from './pages/react-redux/components/ReduxComponent'
 import ReactBootstrap from './pages/react-bootstrap/ReactBootstrap'
+import RecipeBooks from './pages/react-bootstrap/RecipeBooks'
 
 
 const NotFound = () => <h2>404- NOT FOUND</h2>
@@ -130,6 +131,7 @@ const routes = [
   {path: "react-mobx-counter", element: <Counter/>},
   {path: "react-redux", element: <ReduxComponent/>},
   {path: "react-bootstrap", element: <ReactBootstrap/>},
+  {path: "recipe-books", element: <RecipeBooks/>},
 
 ];
 const navLinks = [
@@ -150,6 +152,7 @@ const navLinks = [
   {path: "react-mobx-counter", title: "React Mobx Counter"},
   {path: "react-redux", title: "React Redux"},
   {path: "react-bootstrap", title: "React Bootstrap"},
+  {path: "recipe-books", title: "Recipe Books"},
 
 ];
 return (
