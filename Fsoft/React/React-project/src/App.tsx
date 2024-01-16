@@ -42,6 +42,10 @@ import RecipeBooks from './pages/react-bootstrap/RecipeBooks'
 import EnhancedForm from './pages/comment-recipes/WithFormik'
 import AppHOC from './pages/comment-recipes/APpHOC'
 import RenderProps from './pages/comment-recipes/RenderProps'
+import ContextClass from './pages/advance-hook/ContextClass'
+import UseRef from './pages/advance-hook/useRef'
+import UseMemoHook from './pages/advance-hook/UseMemo'
+
 
 
 
@@ -139,6 +143,9 @@ const routes = [
   {path: "with-formik", element: <EnhancedForm/>},
   {path: "hoc", element: <AppHOC/>},
   {path: "render-props", element: <RenderProps/>},
+  {path: "context-class", element: <ContextClass/>},
+  {path: "use-ref", element: <UseRef/>},
+  {path: "use-memo", element: <UseMemoHook/>},
 
 ];
 const navLinks = [
@@ -163,6 +170,9 @@ const navLinks = [
   {path: "with-formik", title: "With-Formik"},
   {path: "hoc", title: "HOC"},
   {path: "render-props", title: "Render Props"},
+  {path: "context-class", title: "Context Class"},
+  {path: "use-ref", title: "Use Ref"},
+  {path: "use-memo", title: "Use Memo"},
 
 ];
 return (
