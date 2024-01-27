@@ -45,6 +45,8 @@ import RenderProps from './pages/comment-recipes/RenderProps'
 import ContextClass from './pages/advance-hook/ContextClass'
 import UseRef from './pages/advance-hook/useRef'
 import UseMemoHook from './pages/advance-hook/UseMemo'
+import ParentComponent from './pages/advance-hook/uselmperativeHandle'
+import FetchHookExample from './pages/advance-hook/custom-hook/useFetchHook'
 
 
 
@@ -146,6 +148,8 @@ const routes = [
   {path: "context-class", element: <ContextClass/>},
   {path: "use-ref", element: <UseRef/>},
   {path: "use-memo", element: <UseMemoHook/>},
+  {path: "custom-fetch-hook", element:<FetchHookExample/>},
+
 
 ];
 const navLinks = [
@@ -173,6 +177,8 @@ const navLinks = [
   {path: "context-class", title: "Context Class"},
   {path: "use-ref", title: "Use Ref"},
   {path: "use-memo", title: "Use Memo"},
+  {path: "custom-fetch-hook", title: "Custom Fetch Hook"},
+
 
 ];
 return (
