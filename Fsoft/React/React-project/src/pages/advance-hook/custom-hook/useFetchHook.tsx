@@ -9,14 +9,17 @@ interface UserItem {
     id: number;
     name: string;
 }
-function useFetch(url: string) {
-    const [data, setData] = useState([]);
+interface FetData<T> {
+    data: T[];
+}
+function useFetch<T>(url: string): FetData<T> {
+    const [data, setData] = useState<T[]>([]);
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
-            .then(data => setData(data))
+            .then((data: T[]) => setData(data))
     }, [url])
-    return data;
+    return { data };
 }
 export function Todo() {
     // const [data, setData] = useState([]);
@@ -26,14 +29,10 @@ export function Todo() {
     //         .then(res => res.json())
     //         .then(data => setData(data))
     // },[])
-    const data = useFetch('https://jsonplaceholder.typicode.com/todos');
-    return (
-        <>
-            {data && data.map(((item: TodoItem) => (
-                <p key={item.id}>{item.title}</p>
-            )))}
-        </>
-    )
+    const {data} = useFetch<TodoItem>('https://jsonplaceholder.typicode.com/todos');
+    return <>
+    {data && data.map((item) => <p key={item.id}>{item.title}</p>)}
+    </>;
 }
 export function User() {
     const [data, setData] = useState([]);
@@ -57,6 +56,11 @@ export default function FetchHookExample() {
             <Row>
                 <Col xs={6}>
                     <h2>Todo</h2>
+                    <Todo />
+                </Col>
+                <Col xs={6}>
+                    <h2>User</h2>
+                    <User />
                 </Col>
             </Row>
         </Fragment>
