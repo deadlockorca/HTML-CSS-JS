@@ -78,7 +78,6 @@ const WithAxiosService = () => {
       setStatus("error in delete")
     }
   }
-
   return (
     <Fragment>
       <div className="container">
