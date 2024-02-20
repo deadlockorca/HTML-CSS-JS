@@ -41,7 +41,7 @@ const WithAxiosNormal = () => {
     setName((event.target as HTMLInputElement).value);
   };
 
-  const postUser = () => {
+  const postUser = () => { 
     axios({
       method: "POST",
       url: API_URL,
