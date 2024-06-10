@@ -1,0 +1,188 @@
+* {
+    /* border: 2px solid red; */
+    box-sizing: border-box;
+  }
+
+body {
+    /* padding: 10px 250px; */
+    padding: 0px;
+    margin: 0px;
+    font-size: 100%;
+    font-family: 'Helvetica', sans-serif;
+    color: #123A5C;
+}
+
+#section0, #section3, #section4 {
+    padding: 50px 300px;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 2px solid #FFF9E8;
+}
+
+#menu, ul, #section1, #rooms, #box {
+    display: flex;
+    align-items: center;
+}
+
+/* Menu */
+#logo {
+    width: 120px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 15px;
+    font-size: 1.1em;
+    font-weight: 600;
+    letter-spacing: .8px;
+}
+ul *:hover {
+    color: #B61D3C;
+}
+#tips:hover {
+    color: #FCCE3D;
+}
+#menu {
+    justify-content: space-between;
+}
+
+/* Section 1 */
+#section0 {
+    background-color: #FFF9E8;
+    padding-top: 20px;
+}
+h1 {
+    font-size: 3em;
+    margin-top: 0px;
+    color: #B61D3C;
+    text-shadow: 3px 3px rgb(255, 196, 0);
+}
+h1:hover {
+    transform: translate(3px, 3px);
+    text-shadow: none;
+}
+#hero_img {
+    width: 70%;
+}
+#section1 {
+    gap: 80px;
+    margin: 100px 0px;
+}
+
+/* Section 2 */
+.room {
+    width: 250px;
+}
+.room h3 {
+    margin-top: 15px;
+}
+h2 {
+    font-size: 1.8em;
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+.room a:hover {
+    filter: brightness(.9);
+}
+#rooms, #section2 {
+    padding: 50px 100px;
+    padding-top: 25px;
+    text-align: center;
+    background-color: #0e2d48;
+    background-color: #123A5C;
+    background-image: url("images/star-pattern.svg");
+    background-attachment: fixed;
+    color: #FFED98;
+}
+#rooms {
+    gap: 25px 80px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+/* Section3 */
+#section3 {
+    text-align: justify;
+    /* background-color: #FFED98; */
+    background-image: url("images/star-pattern.svg"), url("images/bg2.jpg");
+    background-attachment: fixed;
+    background-position: bottom;
+    font-size: 2em;
+    padding: 125px 500px;
+    color: #123A5C;
+    text-shadow: 0 0 1em #ffffff;
+}
+#section3 * {
+    margin: 0px;
+    font-style: italic;
+}
+#author {
+    text-align: right;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Section4 */
+#section4 {
+    background-color: #123A5C;
+    background-image: url("images/star-pattern.svg");
+    background-attachment: fixed;
+    padding: 80px 350px;
+}
+#box {
+    justify-content: center;
+    gap: 200px;
+    padding: 40px;
+    background-color: #FCCE3D;
+    border-radius: 10px;
+}
+h3 {
+    font-size: 1.3em;
+    margin: 0px;
+}
+#section4 p {
+    margin: 5px 0px;
+}
+
+/* Buttons */
+button {
+    background-color: #FCCE3D;
+    display: inline-block;
+    border: 0 solid transparent;
+    border-radius: 8px;
+    border-bottom: 4px solid #B61D3C;
+    min-width: 300px;
+    height: 40px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    font-weight: 700;
+    color: #0e2d48;
+    margin-bottom: 10px;
+}
+button:hover {
+    filter: brightness(110%)
+}
+button:active {
+    border-bottom: 0px;
+    transform: translateY(4px);
+}
+#last {
+    border: 2.5px solid #0e2d48;
+    border-bottom: 5px solid #0e2d48;
+    min-width: 150px;
+    height: 45px;
+}
+#last:hover {
+    filter: brightness(1.1);
+}
+#last:active {
+    border: 2.5px solid #0e2d48;
+    transform: translateY(5px);
+}
